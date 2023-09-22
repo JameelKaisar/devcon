@@ -1,0 +1,18 @@
+services:
+  main:
+    image: mcr.microsoft.com/devcontainers/javascript-node
+    volumes:
+      - ..:/workspaces:cached
+    command: sleep infinity
+    network_mode: service:network
+    depends_on:
+      - redis
+
+  redis:
+    image: redis
+    restart: unless-stopped
+    network_mode: service:network
+
+  network:
+    image: ubuntu
+    command: sleep infinity
