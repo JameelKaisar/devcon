@@ -1,0 +1,10 @@
+{
+    "name": "Multi Server",
+    "dockerComposeFile": "docker-compose.yaml",
+    "service": "main",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "forwardPorts": [5000, 5001, 5002],
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached,readonly"
+    ]
+}

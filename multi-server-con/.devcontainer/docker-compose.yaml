@@ -1,0 +1,52 @@
+services:
+  main:
+    # image: mcr.microsoft.com/devcontainers/universal:linux
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspaces:cached
+    command: sleep infinity
+    network_mode: service:network
+    depends_on:
+      - server1
+      - server2
+      - server3
+
+  server1:
+    build:
+      context: ./
+      dockerfile: Dockerfile-Server
+      # build time args
+      args:
+        PORT: 5000
+    # run time args
+    environment:
+      PORT: 5000
+    restart: unless-stopped
+    network_mode: service:network
+
+  server2:
+    build:
+      context: ./
+      dockerfile: Dockerfile-Server
+      # build time args
+      args:
+        PORT: 5001
+    # run time args
+    environment:
+      PORT: 5001
+    restart: unless-stopped
+    network_mode: service:network
+
+  server3:
+    image: python:alpine
+    command: python -m http.server 5002
+    restart: unless-stopped
+    network_mode: service:network
+
+  network:
+    image: ubuntu
+    expose:
+      - 5002
+    command: sleep infinity
