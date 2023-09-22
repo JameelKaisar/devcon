@@ -1,0 +1,13 @@
+{
+  "name": "sample-express",
+  "version": "1.0.0",
+  "description": "Sample express app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Jameel Kaisar",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
