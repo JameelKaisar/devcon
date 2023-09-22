@@ -1,0 +1,7 @@
+FROM python:alpine
+
+ARG PORT
+
+EXPOSE ${PORT}
+
+CMD python -m http.server $PORT
