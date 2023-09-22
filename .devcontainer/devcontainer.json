@@ -1,0 +1,15 @@
+{
+    "name": "Simple Container",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "streetsidesoftware.code-spell-checker"
+            ]
+        }
+    },
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached,readonly"
+    ]
+}
