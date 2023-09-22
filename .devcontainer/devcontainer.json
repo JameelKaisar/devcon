@@ -1,0 +1,24 @@
+{
+    "name": "ExpressJS-ReactJS-Redis",
+    "dockerComposeFile": "docker-compose.yaml",
+    "service": "main",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "features": {
+        "github-cli": "latest"
+    },
+    "postCreateCommand": "/bin/bash ./.devcontainer/change_port_visibility.sh 3001 public && (cd express && npm install) & (cd react && npm install)",
+    "postStartCommand": "(cd express && npm start) & (cd react && REACT_APP_CODESPACE_NAME=\"${CODESPACE_NAME}\" REACT_APP_CODESPACE_VISITS_URL=\"https://${CODESPACE_NAME}-3001.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}\" npm start)",
+    "forwardPorts": [3000, 3001],
+    "portsAttributes": {
+        "3000": {
+          "label": "ReactJS",
+          "onAutoForward": "openPreview"
+        },
+        "3001": {
+            "label": "ExpressJS"
+        }
+    },
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached,readonly"
+    ]
+}
