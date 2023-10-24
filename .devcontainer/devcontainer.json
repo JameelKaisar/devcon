@@ -1,0 +1,15 @@
+{
+    "name": "Universal Container",
+    "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "streetsidesoftware.code-spell-checker"
+            ]
+        }
+    },
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached,readonly"
+    ]
+}
