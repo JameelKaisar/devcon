@@ -1,2 +1,5 @@
 # devcon
-Dev Containers
+Dev Container Configuration/Automation Scripts
+
+## simple-con
+Simple Dev Container
