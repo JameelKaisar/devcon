@@ -1,6 +1,9 @@
 # devcon
 Dev Container Configuration/Automation Scripts
 
+## SSH Access
+SSH files are mounted at `/root/.ssh`. You need to use `sudo` for ssh commands like `sudo git clone` insted of `git clone`. Alternatively, you can run a command to copy files from `/root/.ssh` to `~/.ssh` after the container is build.
+
 ## simple-con
 Simple Dev Container
 
