@@ -1,6 +1,6 @@
 {
     "name": "Simple Container",
-    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
     "customizations": {
         "vscode": {
