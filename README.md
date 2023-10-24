@@ -5,7 +5,7 @@ Dev Container Configuration/Automation Scripts
 Simple Dev Container
 
 ## custom-con
-Dev Container with ffmpeg pre-installed
+Dev Container with tmux pre-installed
 
 ## expressjs-con
 Dev Container which sets up a simple ExpressJS app including port forwarding

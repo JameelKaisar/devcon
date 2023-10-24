@@ -4,9 +4,9 @@ const { exec } = require('child_process');
 var app = express();
 
 app.get('/', (req, res) => {
-  const command = 'ffmpeg -version';
+  const command = 'tmux --version';
   exec(command, (error, stdout, stderr) => {
-    res.status(200).send(`Command Output:\n${stdout}`);
+    res.status(200).send(`Command Output:\n${ stdout ? stdout : stderr }`);
   });
 });
 
