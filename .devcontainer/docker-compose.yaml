@@ -1,6 +1,6 @@
 services:
   main:
-    # image: mcr.microsoft.com/devcontainers/universal:linux
+    # image: mcr.microsoft.com/devcontainers/universal:2-linux
     build:
       context: ./
       dockerfile: Dockerfile
