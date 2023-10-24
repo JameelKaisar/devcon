@@ -7,6 +7,9 @@ SSH files are mounted at `/root/.ssh`. You need to use `sudo` for ssh commands l
 ## simple-con
 Simple Dev Container
 
+## universal-con
+Universal Dev Container
+
 ## custom-con
 Dev Container with tmux pre-installed
 
